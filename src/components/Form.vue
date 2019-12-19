@@ -16,27 +16,26 @@
 export default {
   name: 'Form',
   data () {
-      return {
-          message: '',
-          errors: [],
-      }
+    return {
+      message: '',
+      errors: [],
+    }
   },
   methods: {
-      onSubmit:function (e) {
-          this.errors = [];
-          if (!this.message) {
-              this.errors.push("ちゃんと入力しろし");
+    onSubmit:function (e) {
+      this.errors = [];
+      if (!this.message) {
+        this.errors.push("ちゃんと入力しろし");
           } else {
-              if(this.message == 'apple') {
-                  this.errors.push("正解");
-              } else {
-                  this.errors.push("不正解");
-                  this.errors.push("apple");
-              }
-
-          }
-          e.preventDefault();
+        if(this.message == 'apple') {
+          this.errors.push("正解");
+        } else {
+          this.errors.push("不正解");
+          this.errors.push("apple");
+        }
       }
+      e.preventDefault();
+    }
   }
 }
 </script>
